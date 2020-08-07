@@ -116,7 +116,7 @@ int serial_set_parity(port_handle_t fd, int enable, int odd_parity)
 
 int serial_set_dtr(port_handle_t fd, int level)
 {
-    int command;
+    unsigned long command;
     const int dtr = TIOCM_DTR;
     if (level)
     {
@@ -131,7 +131,7 @@ int serial_set_dtr(port_handle_t fd, int level)
 
 int serial_set_rts(port_handle_t fd, int level)
 {
-    int command;
+    unsigned long command;
     const int rts = TIOCM_RTS;
     if (level)
     {
