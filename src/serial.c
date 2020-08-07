@@ -55,7 +55,7 @@ int serial_open(const char *port)
         options.c_cc[VTIME] = 1;
         tcsetattr(fd, TCSANOW, &options);
         usleep(1000);
-        ioctl(fd, TCFLSH, TCIOFLUSH);
+        tcflush(fd, TCIOFLUSH);
     }
     return fd;
 }
